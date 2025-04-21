@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class FileUtils {
@@ -63,5 +65,18 @@ public class FileUtils {
     public static String readFile(String filePath) throws IOException {
         byte[] bytes = Files.readAllBytes(Paths.get(filePath));
         return new String(bytes);
+    }
+
+    /**
+     * Returns list of files found in the scpeified diretory.
+     * No recursive approach is used - only one level scan.
+     * @param dir directory to scan files in
+     * @return List of File
+     */
+    public static List<File> getFilesInDir(File dir) {
+        File[] filesOnly = dir.listFiles(File::isFile);
+        if (filesOnly == null) return Collections.emptyList();
+
+        return Arrays.stream(filesOnly).toList();
     }
 }
