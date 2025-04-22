@@ -53,4 +53,22 @@ public class StrUtils {
 
         return defaultValue[0];
     }
+
+    /**
+     * Removes one char on the edge of the source string only in case it exists on both edges.
+     * Otherwise return original string
+     * @param sourceStr String to make analyze and removal from
+     * @param chToRemove char to be found and removed on the left and right edge
+     * @return String or null (if input was null)
+     */
+    public static String removeSpeciaCharOnEdgesIfExist(String sourceStr, char chToRemove) {
+        if (sourceStr == null || sourceStr.length() < 2) return sourceStr;
+
+        int lastChIndex = sourceStr.length() - 1;
+        if (sourceStr.charAt(0) == chToRemove && sourceStr.charAt(lastChIndex) == chToRemove) {
+            sourceStr = sourceStr.substring(1, lastChIndex);
+        }
+
+        return sourceStr;
+    }
 }
