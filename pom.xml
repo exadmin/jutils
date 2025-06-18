@@ -20,6 +20,12 @@
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/exadmin/jutils</url>
         </repository>
+
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub Snapshots</name>
+            <url>https://maven.pkg.github.com/exadmin/jutils</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <dependencies>
