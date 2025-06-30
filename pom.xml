@@ -20,6 +20,12 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <email>exadmin@mail.ru</email>
+        </developer>
+    </developers>
+
     <scm>
         <url>https://github.com/exadmin/jutils</url>
         <connection>scm:git:https://github.com/exadmin/jutils.git</connection>
